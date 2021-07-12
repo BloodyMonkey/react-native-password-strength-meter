@@ -37,6 +37,7 @@ class BarPasswordStrengthDisplay extends Component {
       width,
     } = this.props;
     const score = scorePassword(password, minLength, scoreLimit, variations);
+    this.props.getScore(score)
     const absoluteWidth = calculateAbsoluteWidth(score, width);
     const { label, labelColor, activeBarColor } = calculateLevel(score, levels);
 
